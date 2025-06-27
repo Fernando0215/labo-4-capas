@@ -15,10 +15,9 @@ public class MainController {
 
     @GetMapping(path = "/")
     public ResponseEntity<?> index() {
-        // Obtener usuario autenticado
+        
         OAuth2User user = (OAuth2User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-        // Imprimir en consola
         System.out.println("Usuario autenticado: " + user.getName());
         System.out.println("Atributos: " + user.getAttributes());
 
